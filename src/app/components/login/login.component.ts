@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   public rForm: FormGroup;
 
   constructor(public http: httpService, public router: Router,public formBuilder: FormBuilder,
-    private bootstrapAlertService: BootstrapAlertService, private helperService: helperService,
+    public bootstrapAlertService: BootstrapAlertService, public helperService: helperService,
      public generalService: generalService) {
 
        this.generalService.statusNavBarInicial = false;
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
             this.generalService.setstatusNavBarInicial(true);
             this.generalService.setstatusNavBarMenuStudent(false);
             this.bootstrapAlertService.showSucccess(`Welcome to PSL - PRAXIS ${this.email}`);
-            
+
             console.log(typeof decodedToken.roles);
             if(decodedToken.roles.indexOf('admin')>= 0){
               console.log("es un admin");

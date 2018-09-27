@@ -41,7 +41,7 @@ export class InformationComponent implements OnInit {
     video.autoplay = false;
   }
 
-  constructor(private AdminmainmenuComponent: AdminmainmenuComponent, private route: ActivatedRoute, private router: Router, private helperService: helperService, private sanitizer:  DomSanitizer,
+  constructor(public AdminmainmenuComponent: AdminmainmenuComponent, public route: ActivatedRoute, public router: Router, public helperService: helperService, public sanitizer:  DomSanitizer,
    public generalService: generalService, public http: httpService ) {
 
      this.generalService.statusNavBarInicial = true;

@@ -8,9 +8,9 @@ import { generalService } from '../../../services/generalService';
 })
 export class TeachermainmenuComponent implements OnInit {
 
-  constructor(public generalService: generalService) { 
-      
-      
+  constructor(public generalService: generalService) {
+
+
     this.generalService.statusNavBarInicial = true;
     this.generalService.statusNavBarMenuStudent = false;
 

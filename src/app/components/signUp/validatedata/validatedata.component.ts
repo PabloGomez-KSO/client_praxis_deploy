@@ -20,9 +20,9 @@ export class ValidatedataComponent implements OnInit {
   public student: Student;
   public step: number;
 
-  constructor(private router: Router, private sanitizer:  DomSanitizer,
-     private helperService: helperService, private http: httpService,
-      private storageS: storageVideoService, private popup: BootstrapAlertService ) {
+  constructor(public router: Router, public sanitizer:  DomSanitizer,
+     public helperService: helperService, public http: httpService,
+      public storageS: storageVideoService, public popup: BootstrapAlertService ) {
        this.student = this.helperService.getStudentOfSignUp();
 
   }

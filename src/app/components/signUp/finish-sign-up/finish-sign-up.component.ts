@@ -14,7 +14,7 @@ export class FinishSignUpComponent implements OnInit {
   public student;
   public step;
 
-  constructor(private router: Router,private helperService: helperService) {
+  constructor(public router: Router,public helperService: helperService) {
     this.student = this.helperService.getStudentOfSignUp();
     console.log("En el paso final" , this.helperService.getStudentOfSignUp() );
 

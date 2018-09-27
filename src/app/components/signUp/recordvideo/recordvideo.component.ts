@@ -29,8 +29,8 @@ export class RecordvideoComponent implements AfterViewInit {
 
  @ViewChild('video') video;
 
- constructor(private router: Router,private helperService: helperService,
-   private bootstrapAlertService: BootstrapAlertService) {
+ constructor(public router: Router,public helperService: helperService,
+  public bootstrapAlertService: BootstrapAlertService) {
     this.student = this.helperService.getStudentOfSignUp();
     this.step = 0;
     console.log("En video " , this.helperService.getStudentOfSignUp() );

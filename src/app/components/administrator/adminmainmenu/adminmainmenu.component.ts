@@ -18,7 +18,7 @@ export class AdminmainmenuComponent implements OnInit {
   public student: Applicants;
   public students: any = [];
 
-  constructor(private router: Router, private sanitizer: DomSanitizer, private http: httpService, public generalService: generalService ) {
+  constructor(public router: Router, private sanitizer: DomSanitizer, private http: httpService, public generalService: generalService ) {
 
     this.generalService.statusNavBarInicial = true;
     this.generalService.statusNavBarMenuStudent = false;
