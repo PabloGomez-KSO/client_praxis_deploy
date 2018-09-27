@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!-- Progress bar -->
+<div class="row justify-content-md-center">
+    <div class="col-12 mx-auto">
+        <div class="container-fluid">
+            <br /><br />
+            <ul class="list-unstyled multi-steps">
+                <li class="is-active">Personal Data</li>
+                <li>Record Video</li>
+                <li>Validate</li>
+                <li>Finish</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Steps buttons -->
+<div class="row justify-content-md-center">
+    <div class="col-3 mx-auto my-auto">
+        <button type="button" class="btn btn-primary" style="display:none;">Previous</button>
+    </div>
+    <div class="col-0.5 mx-auto my-auto">
+        <button type="button" class="btn btn-primary" (click)="goToNextStep()">Next</button>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="main-login main-center">
+                <h5> Sign up for Student</h5>
+                <form [formGroup]="rForm">
+
+                    <div class="form-group">
+                        <label for="name" class="control-label">Your Name</label>
+                        <div class="input-group" id="name">
+                            <input type="string" [(ngModel)]="this.student.name" class="form-control" name="name" formControlName="name" />
+                        </div>
+                        <div class="alert alert-danger" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">
+                            Name is required
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div>
+                                <label class="my-1 mr-2" for="documentType">Document Type</label>
+                                <select class="custom-select my-1 mr-sm-2" [(ngModel)]="this.student.documentType" name="documentType" id="documentType" formControlName="documentType">
+                                  <option value="cedula de ciudadania">C.C.</option>
+                                  <option value="tarjeta de identidad">T.I.</option>
+                                  <option value="cedula de extranjeria">Cedula Extranjeria</option>
+                                </select>
+                                <div class="alert alert-danger" *ngIf="!rForm.controls['documentType'].valid && rForm.controls['documentType'].touched">
+                                    Choose one type
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <label for="document" class="cols-sm-2 control-label">Document Number</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="number" [(ngModel)]="this.student.documentNumber" class="form-control" name="document" id="document" formControlName="document" />
+                            </div>
+                            <div class="alert alert-danger" *ngIf="!rForm.controls['document'].valid && rForm.controls['document'].touched">
+                                Document is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <div class="input-group">
+                            <input type="email" [(ngModel)]="this.student.email" class="form-control" name="email" id="email" aria-describedby="emailHelp" formControlName="email">
+                        </div>
+
+                        <div class="alert alert-danger" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+                            Invalid email
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date" class="control-label">Birthdate</label>
+                        <div>
+                            <input type="date" [(ngModel)]="this.student.birthdate" name="date" id="date" formControlName="date">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="!rForm.controls['date'].valid && rForm.controls['date'].touched">
+                            Date is required
+                        </div>
+                    </div>
+
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Praxis Type</label>
+                    <select class="custom-select my-1 mr-sm-2" [(ngModel)]="this.student.typeOfPraxis" name="PraxisType" id="typeOfPraxis" formControlName="praxistype">
+                           <option value="first job">First Job</option>
+                           <option value="practice one semester later">Practice One Semester Later</option>
+                           <option value="practice two semester later">Practice Two Semester Later</option>
+                   </select>
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['praxistype'].valid && rForm.controls['praxistype'].touched">
+                        Choose one type
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="control-label">Password</label>
+                        <div class="input-group" id="password">
+
+                            <input type="password" [(ngModel)]="this.student.password" class="form-control" name="password" formControlName="password" />
+                        </div>
+                        <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+                            Password is required, at least one uppercase, one lowercase and minimum 8 characters
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm" class="control-label">Confirm Password</label>
+                        <div class="input-group" id="confirm">
+                            <input type="password" [(ngModel)]="this.verificationPass" class="form-control" name="confirm" formControlName="cpassword" />
+                        </div>
+                        <div class="alert alert-danger" *ngIf="rForm.controls.cpassword.errors?.MatchPassword">Password not match, at least one uppercase, one lowercase and minimum 8 characters</div>
+                    </div>
+
+                    <label class="my-1 mr-2" for="university">University</label>
+                    <select class="custom-select my-1 mr-sm-2" [(ngModel)]="this.student.university" name="university" id="university" formControlName="university">
+                     <option value="Universidad Nacional de Colombia">Universidad Nacional de Colombia</option>
+                   </select>
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['university'].valid && rForm.controls['university'].touched">
+                        Select an university
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester" class="control-label">Semester</label>
+                        <div class="input-group" id="semester">
+                            <input type="number" [(ngModel)]="this.student.semester" class="form-control" name="semester" formControlName="semester" />
+                        </div>
+                        <div class="alert alert-danger" *ngIf="!rForm.controls['semester'].valid && rForm.controls['semester'].touched">
+                            Missing a valid semester
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <label for="biography">Soft description</label>
+                            <textarea class="form-control rounded-0" [(ngModel)]="this.student.biography" name="biography" id="biography" rows="3" formControlName="biography"></textarea>
+                        </div>
+                        <div class="alert alert-danger" *ngIf="!rForm.controls['biography'].valid && rForm.controls['biography'].touched">
+                            Missing biography
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+#playground-container {
+    height: 500px;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+body,
+html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+    font-family: 'Oxygen', sans-serif;
+    background-size: cover;
+}
+
+.main {
+    margin: 50px 15px;
+}
+
+h1.title {
+    font-size: 50px;
+    font-family: 'Passion One', cursive;
+    font-weight: 400;
+}
+
+hr {
+    width: 10%;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+.form-control {
+    height: auto!important;
+    padding: 8px 12px !important;
+}
+
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21)!important;
+}
+
+.main-center {
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 10px 40px;
+    background: #47a3da;
+    color: #FFF;
+    text-shadow: none;
+}
+
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.login-button {
+    margin-top: 5px;
+}
+
+.login-register {
+    font-size: 11px;
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+.recordvideo h4 {
+    text-align: center;
+}
+
+.recordvideo {
+    margin-top: 30px;
+    margin: 0 auto;
+    padding: 10px 40px;
+    padding: 10px 40px;
+}
+
+.padding-0 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.bold-label {
+    font-weight: bold;
+}
+
+.pulse-btn {
+    text-align: center;
+}
+
+.pulse-btn .btn {
+    padding: 0.5em 1.5em;
+    animation: pulse 1.5s cubic-bezier(0.66, 0.67, 0.83, 0.99) infinite;
+}
+
+.shadow {
+    text-shadow: 1px 1px 1px #070505ea;
+}
+
+@media (max-width: 767px) {
+    .pulse-btn .btn {
+        font-size: 16px;
+        letter-spacing: normal;
+        padding: 10px 15px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        outline: 1px solid #428bca;
+        outline-offset: 0px;
+    }
+    30% {
+        outline: 1px solid rgba(48, 113, 169, 0.7);
+        outline-offset: 10px;
+    }
+    60% {
+        outline: 1px solid rgba(48, 113, 169, 0);
+        outline-offset: 20px;
+    }
+    100% {
+        outline: 1px solid rgba(48, 113, 169, 0);
+        outline-offset: 60px;
+    }
+}

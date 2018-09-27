@@ -1,0 +1,373 @@
+<div class="row mt-5 ml-2">
+    <div class="col-2">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Sessions</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Attendance</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Grades</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Surveys</a>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                <div class="row">
+
+                    <div class="col-4 mb-5" *ngFor="let session of sessions">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                {{session.name}}
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Teacher</h5>
+                                <p class="card-text">{{session.description}}</p>
+                                <a href="#" class="btn btn-primary">Resources</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                {{session.date}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <h1>Grades</h1>
+                <div class="col-10 mb-8">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Student</th>
+                                <th scope="col">Session 1</th>
+                                <th scope="col">Session 2</th>
+                                <th scope="col">Session 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Juan Pablo</th>
+                                <td>Assisted</td>
+                                <td>Not Assisted</td>
+                                <td>Assisted</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Carlos Santos</th>
+                                <td>Assisted</td>
+                                <td>Assisted</td>
+                                <td>Not Assisted</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Santiago Arbelaez</th>
+                                <td>Assisted</td>
+                                <td>Assisted</td>
+                                <td>Assisted</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <h1>Attendace</h1>
+                <div class="col-10 mb-8">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Student</th>
+                                <th scope="col">Session 1</th>
+                                <th scope="col">Session 2</th>
+                                <th scope="col">Session 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Juan Pablo</th>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Carlos Santos</th>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Santiago Arbelaez</th>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+                <div class="col-12 mx-auto">
+                    <h1>PRAXIS Sessions Evaluation</h1>
+                    <div class="container-fluid" [hidden]="submitted">
+
+                        <form class="was-validated" #surveyForm="ngForm" (ngSubmit)="onSubmit(surveyForm.value)">
+                            <!-- [formGroup]="formdata" -->
+
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Select session's date.</span>
+                                </div>
+                                <label for="date"></label>
+                                <input type="date" class="form-control" id="date" aria-label="Small" aria-describedby="inputGroup-sizing-sm" required>
+                            </div>
+
+                            <h5>Select tutor's name</h5>
+                            <label>
+                          <select class="custom-select custom-select-lg mb-3"  >
+                            <option *ngFor="let nameT of tutors" [value]="nameT">{{nameT}}</option>
+                          </select>
+                        </label>
+
+                            <h5>Select session type:</h5>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="virtual" name="sessionType" class="custom-control-input">
+                                <label class="custom-control-label" for="virtual"><b>Virtual</b></label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="face-to-face" name="sessionType" class="custom-control-input" required>
+                                <label class="custom-control-label" for="face-to-face"><b>Face-to-face</b></label>
+                            </div>
+
+
+                            <h5>Session quality</h5>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Deficient</th>
+                                        <th scope="col">Good</th>
+                                        <th scope="col">Excellent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Session content</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient1T1" name="sessionContent" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient1T1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good1T1" name="sessionContent" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good1T1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent1T1" name="sessionContent" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent1T1"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Session time</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient2T1" name="sessionTime" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient2T1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good2T1" name="sessionTime" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good2T1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent2T1" name="sessionTime" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent2T1"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Session material</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient3T1" name="sessionMaterial" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient3T1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good3T1" name="sessionMaterial" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good3T1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent3T1" name="sessionMaterial" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent3T1"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5>Tutor evaluation</h5>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Deficient</th>
+                                        <th scope="col">Good</th>
+                                        <th scope="col">Excellent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Knowledge of the subject</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient1" name="knowledge" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good1" name="knowledge" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good1"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent1" name="knowledge" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent1"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Ability to transmit knowledge</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient2" name="ability" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient2"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good2" name="ability" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good2"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent2" name="ability" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent2"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Was the session dynamic?</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient3" name="dynamicSession" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient3"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good3" name="dynamicSession" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good3"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent3" name="dynamicSession" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent3"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Did the tutor solve your doubts?</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient4" name="solveDoubts" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient4"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good4" name="solveDoubts" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good4"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent4" name="solveDoubts" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent4"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Were the language and tone of voice appropriate?</th>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="deficient5" name="languageAndVoice" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="deficient5"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="good5" name="languageAndVoice" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="good5"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="excellent5" name="languageAndVoice" class="custom-control-input" required>
+                                                <label class="custom-control-label" for="excellent5"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5>In general, the session was...</h5>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="satisfactory" name="sessionWas" class="custom-control-input" required>
+                                <label class="custom-control-label" for="satisfactory"><b>Satisfactory</b></label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="unsatisfactory" name="sessionWas" class="custom-control-input" required>
+                                <label class="custom-control-label" for="unsatisfactory"><b>Unsatisfactory</b></label>
+                            </div>
+
+                            <h5>Observations and suggestions.</h5>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                </div>
+                                <label>
+                            <textarea class="form-control" aria-label="With textarea" required></textarea>
+                          </label>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+
+                        </form>
+                        <div class="pre">
+                            <h2>Model: </h2>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

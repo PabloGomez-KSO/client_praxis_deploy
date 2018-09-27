@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-4 mx-auto mt-5 login-form-1">
+        <h3>Login</h3>
+        <form [formGroup]="rForm">
+            <div class="form-group">
+                <input type="text" [(ngModel)]="this.email" class="form-control" placeholder="Email" value="" formControlName="email" />
+            </div>
+            <div class="alert alert-danger" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+                Type a valid email
+            </div>
+            <div class="form-group">
+                <input type="password" [(ngModel)]="this.password" class="form-control" placeholder="Password" value="" formControlName="password" />
+            </div>
+            <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+                Password is required
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btnSubmit" value="Submit" (click)="submit()" />
+            </div>
+        </form>
+    </div>
+</div>

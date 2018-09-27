@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<div class="row justify-content-md-center">
+  <div class="col-12 mx-auto">
+    <div class="container-fluid">
+      <br /><br />
+      <ul class="list-unstyled multi-steps">
+        <li>Personal Data</li>
+        <li class="is-active">Record Video</li>
+        <li>Validate</li>
+        <li>Finish</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-md-center">
+  <div class="col-3 mx-auto my-auto">
+    <button type="button" class="btn btn-primary" (click)="goToPrevStep()">Previous</button>
+  </div>
+  <div class="col-0.5 mx-auto my-auto">
+    <button type="button" class="btn btn-primary" (click)="goToNextStep()">Next</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 mx-auto mt-4 recordvideo">
+    <h4>Introduction video</h4>
+    <h6>Tell us what are your expectations with PRAXIS and what value you can add to PSL in a video!</h6>
+    <div class="embed-responsive embed-responsive-16by9">
+      <video #video class="video"></video>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" [style.width]="this.helperService.percentageLoading + '%'">
+          {{this.helperService.percentageLoading}} Uploading video.
+        </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-4 mx-auto">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-success" (click)="startRecording()" style="width: 80px"  > <i class="fas fa-video"></i></button>
+          <button type="button" class="btn btn-danger" (click)="stopRecording()" style="width: 80px"> <i class="fas fa-stop"></i> </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

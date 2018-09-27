@@ -1,0 +1,79 @@
+<div class="container mt-5">
+
+    <div class="row justify-content-md-center">
+        <div class="col-3 mx-auto my-auto">
+            <button type="button" class="btn btn-primary" (click)="goToPrevStep()">Previous</button>
+        </div>
+        <div class="col-0.5 mx-auto my-auto">
+            <button type="button" class="btn btn-primary" style="display:none;">Next</button>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <h4>Information of the Student</h4>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <h6>Here you can accept or deny the applicant</h6>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 padding-0 mt-5">
+            <div class="main-login main-center shadow">
+                <h5> Personal Data</h5>
+                <form class="" method="post" action="#">
+
+                    <div class="row">
+                        <label class="control-label bold-label">Name: </label>
+                        <p class="pl-1">{{ this.name }}</p>
+                    </div>
+
+                    <div class="row">
+                        <label class="control-label bold-label">Document: </label>
+                        <p class="pl-1">{{ this.documentType }} {{ this.documentNumber }}</p>
+                    </div>
+
+                    <div class="row">
+                        <label class="control-label bold-label">Birthdate: </label>
+                        <p class="pl-1">{{ this.birthdate }}</p>
+                    </div>
+
+                    <div class="row">
+                        <label class="control-label bold-label">Email address: </label>
+                        <p class="pl-1">{{ this.email }}</p>
+                    </div>
+
+                    <div class="row">
+                        <label class="control-label bold-label">Praxis Type: </label>
+                        <p class="pl-1">{{ this.typeOfPraxis }}</p>
+                    </div>
+
+                    <div class="row">
+                        <label class="control-label bold-label">University: </label>
+                        <p class="pl-1">{{ this.university }}</p>
+                    </div>
+
+                    <div class="row">
+                        <label class="control-label bold-label">Description: </label>
+                        <p class="pl-1">{{ this.biography }}</p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8 mx-auto recordvideo padding-0">
+            <h4>Introduction video</h4>
+            <div class="embed-responsive embed-responsive-16by9">
+                <video id="video" #video [src]=getSantizeUrl(this.videoUrl)></video>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 mr-2 ml-2 justify-content-md-center">
+        <div class="col-3 mx-auto my-auto pulse-btn">
+            <button class="btn btn-success " (click)="acceptStudent()">Accept</button></div>
+        <div class="col-3 mx-auto my-auto pulse-btn">
+            <button class="btn-danger btn" (click)="denyStudent()">Deny</button></div>
+    </div>
+</div>

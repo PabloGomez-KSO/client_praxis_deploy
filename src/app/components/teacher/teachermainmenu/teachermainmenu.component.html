@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Session Attendance</title>
+</head>
+<div class="row mt-5 ml-2">
+    <div class="col-2">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Assign grades and attendance</a>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row table-responsive mt-4">
+            <table class="table table-hover">
+                <caption>List of students</caption>
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Student</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col" colspan="2">Attendance</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <!-- Acá for each para cada estudiante o similar-->
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <!--contando o algo -->
+                        <td>Student1</td>
+                        <td>
+                            <div class="input-group" id="grade">
+                                <input type="number" class="form-control" name="grade">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="yes" name="attendance">
+                                <label class="custom-control-label" for="yes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="no" name="attendance">
+                                <label class="custom-control-label" for="no">No</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>1</th>
+                        <!--contando o algo -->
+                        <td>Student1</td>
+                        <td>
+                            <div class="input-group" id="grade">
+                                <input type="number" class="form-control" name="grade">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="yes" name="attendance">
+                                <label class="custom-control-label" for="yes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="no" name="attendance">
+                                <label class="custom-control-label" for="no">No</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>2</th>
+                        <!--contando o algo -->
+                        <td>Student2</td>
+                        <td>
+                            <div class="input-group" id="grade">
+                                <input type="number" class="form-control" name="grade">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="yes" name="attendance">
+                                <label class="custom-control-label" for="yes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="no" name="attendance">
+                                <label class="custom-control-label" for="no">No</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>3</th>
+                        <!--contando o algo -->
+                        <td>Student3</td>
+                        <td>
+                            <div class="input-group" id="grade">
+                                <input type="number" class="form-control" name="grade">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="yes" name="attendance">
+                                <label class="custom-control-label" for="yes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="no" name="attendance">
+                                <label class="custom-control-label" for="no">No</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>4</th>
+                        <!--contando o algo -->
+                        <td>Student4</td>
+                        <td>
+                            <div class="input-group" id="grade">
+                                <input type="number" class="form-control" name="grade">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="yes" name="attendance">
+                                <label class="custom-control-label" for="yes">Yes</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="no" name="attendance">
+                                <label class="custom-control-label" for="no">No</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8">
+                <button type="submit" name="send" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+
+    </div>
+</div>

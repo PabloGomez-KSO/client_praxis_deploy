@@ -1,0 +1,175 @@
+/* Active and after circle step */
+.multi-steps > li.is-active:before, .multi-steps > li.is-active ~ li:before {
+  content: counter(stepNum);
+  font-family: inherit;
+  font-weight: 700;
+}
+
+/* Line after active steps */
+.multi-steps > li.is-active:after, .multi-steps > li.is-active ~ li:after {
+  background-color: #00CCDD;
+}
+
+/* Progress bar */
+.multi-steps {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Active and doed steps text */
+.multi-steps > li {
+  counter-increment: stepNum;
+  text-align: center;
+  display: table-cell;
+  position: relative;
+  color: #000000;
+}
+
+/* Steps already do it */
+.multi-steps > li:before {
+  content: '\f00c';
+  content: '\2713;';
+  content: '\10003';
+  content: '\10004';
+  content: '\2713';
+  display: block;
+  margin: 0 auto 4px;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: bold;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #2E64FE;
+  border-radius: 50%;
+}
+
+/* Line between steps */
+.multi-steps > li:after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: #00CCDD;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  z-index: -1;
+}
+
+/* Line after final step */
+.multi-steps > li:last-child:after {
+  display: none;
+}
+
+/* Active step circle */
+.multi-steps > li.is-active:before {
+  background-color: #819FF7;
+  border-color: #2E64FE;
+}
+
+/* Text next steps */
+.multi-steps > li.is-active ~ li {
+  color: #808080;
+}
+
+/* Nexts steps circle */
+.multi-steps > li.is-active ~ li:before {
+  background-color: #ededed;
+  border-color: #00FFFF;
+}
+
+/* Responsive progress bar */
+/* @media only screen and (max-width: 410px) {
+  .multi-steps > li.is-active ~ li {
+    display: none;
+  }
+} */
+
+#playground-container {
+    height: 500px;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+body, html{
+     height: 100%;
+ 	   background-repeat: no-repeat;
+ 	   background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+   	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+
+.main{
+ 	margin:50px 15px;
+}
+
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+
+.form-control {
+    height: auto!important;
+padding: 8px 12px !important;
+}
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 600px;
+  padding: 10px 40px;
+	background:#47a3da;
+	color: #FFF;
+  text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+}
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+
+.button {
+    position: absolute;
+    top: 50%;
+}

@@ -1,0 +1,14 @@
+<div [hidden]="this.generalService.statusNavBarMenuStudent">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <a class="navbar-brand" href="#"><img src="https://www.psl.com.co/images/logo.png" alt=""></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+           <div class="navbar-nav ml-auto">
+               <button type="button" class="btn btn-warning" (click)="logOut()" >Log Out</button>
+           </div>
+       </div>
+   </nav>
+</div>
