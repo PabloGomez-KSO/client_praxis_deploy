@@ -22,7 +22,6 @@ describe('RecordvideoComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         RouterTestingModule
-        RouterTestingModule,
       ],
       providers: [
         helperService,
